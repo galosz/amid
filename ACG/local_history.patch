@@ -1,0 +1,17 @@
+Index: app/src/main/java/com/example/myapplication/Figura.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/myapplication/Figura.java b/app/src/main/java/com/example/myapplication/Figura.java
+--- a/app/src/main/java/com/example/myapplication/Figura.java	
++++ b/app/src/main/java/com/example/myapplication/Figura.java	(date 1729471108186)
+@@ -31,7 +31,7 @@
+         int szer = getWidth();
+         int szer_2 = szer/2;
+         int wys = getHeight();
+-        int rozmiar =(szer_2 < wys ? szer_2 :wys)-10;
++        int rozmiar =(szer_2 < wys ? szer_2 :wys)-20;
+         int x,y,dx,dy;
+         Paint p = new Paint();
+         p.setAntiAlias(true);
