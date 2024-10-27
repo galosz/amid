@@ -19,7 +19,7 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
 
 
-    private Bitmap bmp;
+    private Bitmap bitmap;
     private Canvas canvas;
     private Paint paint;
     private ImageView imageView;
@@ -47,28 +47,28 @@ public class MainActivity extends AppCompatActivity {
     boolean stworzono = false;
     boolean czy_stworzono_obiekt = false;
 
-    public void kliknieto_kreuj(View v){
+    public void button_kreuj(View v){
         if (!stworzono){
             int szer = imageView.getWidth();
             int wys = imageView.getHeight();
-            bmp = Bitmap.createBitmap(szer, wys, Bitmap.Config.ARGB_8888);
-            canvas = new Canvas(bmp);
+            bitmap = Bitmap.createBitmap(szer, wys, Bitmap.Config.ARGB_8888);
+            canvas = new Canvas(bitmap);
             canvas.drawColor(Color.WHITE);
-            imageView.setImageBitmap(bmp);
+            imageView.setImageBitmap(bitmap);
             stworzono=true;
         }
 
 
     }
 
-    public void klikniecie_lini(View v){
+    public void button_lini(View v){
     if (stworzono && czy_stworzono_obiekt==false){
         for (int i = 0; i < 20; i++) {
 
-            int startX = random.nextInt(bmp.getWidth());
-            int startY = random.nextInt(bmp.getHeight());
-            int stopX = random.nextInt(bmp.getWidth());
-            int stopY = random.nextInt(bmp.getHeight());
+            int startX = random.nextInt(bitmap.getWidth());
+            int startY = random.nextInt(bitmap.getHeight());
+            int stopX = random.nextInt(bitmap.getWidth());
+            int stopY = random.nextInt(bitmap.getHeight());
             paint.setColor(Color.rgb(random.nextInt(256), random.nextInt(256), random.nextInt(256)));
 
             canvas.drawLine(startX, startY, stopX, stopY, paint);
@@ -80,15 +80,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void kliknieto_elipsy(View v){
+    public void button_elipsy(View v){
         if (stworzono&& czy_stworzono_obiekt==false){
             stworzono=true;
             for (int i = 0; i < 20; i++) {
 
-                int left = random.nextInt(bmp.getWidth()/2);
-                int top = random.nextInt(bmp.getHeight()/2);
-                int right = left + random.nextInt(bmp.getWidth() - left);
-                int bottom = top + random.nextInt(bmp.getHeight() - top);
+                int left = random.nextInt(bitmap.getWidth()/2);
+                int top = random.nextInt(bitmap.getHeight()/2);
+                int right = left + random.nextInt(bitmap.getWidth() - left);
+                int bottom = top + random.nextInt(bitmap.getHeight() - top);
 
                 paint.setColor(Color.rgb(random.nextInt(256), random.nextInt(256), random.nextInt(256)));
 
@@ -99,14 +99,14 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void kliknieto_prostakoty(View v){
+    public void button_prostakoty(View v){
         if (stworzono&& czy_stworzono_obiekt==false){
             stworzono=true;
             for (int i = 0; i < 20; i++) {
-                int left = random.nextInt(bmp.getWidth()/2);
-                int top = random.nextInt(bmp.getHeight()/2);
-                int right = left + random.nextInt(bmp.getWidth() - left);
-                int bottom = top + random.nextInt(bmp.getHeight() - top);
+                int left = random.nextInt(bitmap.getWidth()/2);
+                int top = random.nextInt(bitmap.getHeight()/2);
+                int right = left + random.nextInt(bitmap.getWidth() - left);
+                int bottom = top + random.nextInt(bitmap.getHeight() - top);
 
                 paint.setColor(Color.rgb(random.nextInt(256), random.nextInt(256), random.nextInt(256)));
 
@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void kliknieto_czysc(View v){
+    public void button_czysc(View v){
         stworzono=false;
         czy_stworzono_obiekt=false;
         canvas.drawColor(Color.WHITE);
